@@ -6,23 +6,23 @@
 /*   By: ccompote <ccompote@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 15:14:18 by ccompote          #+#    #+#             */
-/*   Updated: 2022/12/19 19:42:36 by ccompote         ###   ########.fr       */
+/*   Updated: 2023/01/12 22:49:23 by ccompote         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-size_t	ft_strlen(char *s)
+int	ft_strlen_no_nl(char *s)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i] != '\0' && s[i] != '\n')
 		i++;
 	return (i);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*gn_strchr(char *s, int c)
 {
 	char	c2;
 
@@ -38,7 +38,7 @@ char	*ft_strchr(char *s, int c)
 	return (s);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*gn_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	int		i;

@@ -6,7 +6,7 @@
 /*   By: ccompote <ccompote@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 15:01:31 by ccompote          #+#    #+#             */
-/*   Updated: 2022/12/19 19:42:30 by ccompote         ###   ########.fr       */
+/*   Updated: 2023/01/12 22:49:40 by ccompote         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_read(int fd, char *progress)
 	if (!buf)
 		return (NULL);
 	res_read = 1;
-	while (!ft_strchr(progress, '\n') && res_read != 0)
+	while (!gn_strchr(progress, '\n') && res_read != 0)
 	{
 		res_read = read(fd, buf, BUFFER_SIZE);
 		if (res_read == -1)
@@ -58,7 +58,7 @@ char	*ft_read(int fd, char *progress)
 			return (NULL);
 		}
 		buf[res_read] = '\0';
-		progress = ft_strjoin(progress, buf);
+		progress = gn_strjoin(progress, buf);
 	}
 	free(buf);
 	return (progress);
